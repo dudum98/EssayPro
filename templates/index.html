@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EssayPro</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="gif-left"></div>
+    <div class="gif-right"></div>
+    <div class="container">
+        <h1>EssayPro</h1>
+        <form method="post" action="/">
+            <textarea name="essay" rows="10" placeholder="Paste your essay here..."></textarea><br>
+            <input type="submit" value="Submit Essay">
+        </form>
+
+        {% if feedback %}
+        <div class="feedback-section">
+            <h2>Feedback:</h2>
+            <pre>{{ feedback }}</pre>
+        </div>
+    {% endif %}
+
+        {% if error %}
+            <div class="error">
+                <h2>Error:</h2>
+                <p>{{ error }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
